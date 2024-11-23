@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap');
+
+body{
+    background-color: #F7ECDE;
+}
+
+::selection{
+    background-color: #FEC260;
+}
+.h1-font{
+    font-family: "Pacifico", cursive;
+    font-size: 3.125rem;
+    font-weight: 500;
+    color: #352E28;
+}
+
+.h2-font{
+    font-family:"Righteous", sans-serif;
+    font-size: 1.5625rem;
+    font-weight: 500;
+
+}
+.content-font{
+    font-family:"PT Sans Caption", sans-serif;
+    font-weight: 600;
+}
+
+
+/* ================================================== */
+#book-form>h1{
+    position: relative;
+    letter-spacing: 1px;
+}
+#book-form > h1::after{
+    content: '';
+    background-color: #FEC260;
+    width: 17%;
+    
+    height: 40%;
+    position: absolute;
+    bottom: -6px;
+    left: 41.9%;
+    /* left: 450px; */
+    z-index: -1;
+    transition: height .3s ease-in-out;
+}
+#book-form>h1:hover::after{
+    height: 80%;
+}
+
+
+
+#book-form .container .inputs{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+#book-form .container .inputs::before{
+    content: '';
+    width: 100%;
+    border-top: 3px dotted #352e28;
+    top: 0;
+    position: absolute;
+}
+#book-form .container .inputs::after{
+    content: '';
+    width: 100%;
+    border-bottom: 3px dotted #352e28;
+    bottom: 0;
+    position: absolute;
+}
+
+.form-control:focus{
+    border-color: #FEC260;
+        box-shadow: 0 0 0 .25rem rgba(253, 161, 13, 0.25);
+}
+
+
+.btn-sub{
+    background-color: #D1512D;
+    color: #fff;
+    padding: 10px 50px ;
+}
+
+.btn-sub:hover{
+    background-color: hsl(13, 75%, 48%);
+    color: #fff;
+}
+
+
+#book-form .container .inputs h2{
+    position: relative;
+    background: linear-gradient(90deg, rgba(60, 165, 92, 1) 37%, rgba(181, 172, 73, 1) 54%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}

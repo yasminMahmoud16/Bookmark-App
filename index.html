@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/sty;e.css">
+    <title>BookMark App</title>
+</head>
+
+<body class="">
+    <main>
+
+        <section id="book-form">
+
+            <h1 class="h1-font text-center text-capitalize my-5 lh-1">bookmark</h1>
+            <div class="container">
+                <div class="inputs d-flex flex-column justify-content-center">
+                    <h2 class="h2-font text-center">
+                        <i class="fa-solid fa-bookmark"></i>
+                        Bookmark your favorite sites
+                        <i class="fa-solid fa-bookmark"></i>
+                    </h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="site-name" class="form-label content-font fw-bold"> Site
+                                Name</label>
+                            <input type="text" 
+                            class="form-control py-2"
+                            id="site-name"
+                            placeholder="Bookmark Name"
+                            oninput="inputValidation(/^\w{3,20}\s?(\w+)?$/i, this.value, nameAlert, this)"
+                            >
+                            <p class="alert alert-danger mt-3 d-none" id="nameAlert">the site name should not be less than 3 character </p>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="site-url" class="form-label content-font fw-bold">Site URL</label>
+                            <input type="url" 
+                            class="form-control py-2"
+                            id="site-url"
+                            placeholder="Website URL"
+                            oninput="inputValidation(/^(https?:\/\/)?([\w]+(\.[\w]+)+)(:\d+)?(\/[^\s?#]*)?(\?[^\s#]*)?(#[^\s]*)?$/i, this.value, urlAlert, this)"
+                            >
+
+                            <p class="alert alert-danger mt-3 d-none" id="urlAlert">The URL Shoud Start With ( https:// or http:// )</p>
+                        </div>
+                        
+                    </form>
+                    <div class="btn-div d-flex align-items-center justify-content-center">
+
+                        <button type="submit" class="btn content-font fw-light lh-1 btn-sub" onclick="addSite()">Submit</button>
+                    </div>
+                </div>
+
+                <div class="table-cells">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="content-font fw-bold text-center">index</th>
+                                <th scope="col" class="content-font fw-bold text-center">Website Name</th>
+                                <th scope="col" class="content-font fw-bold text-center">Visit </th>
+                                <th scope="col" class="content-font fw-bold text-center">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
